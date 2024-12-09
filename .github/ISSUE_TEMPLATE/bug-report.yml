@@ -1,0 +1,85 @@
+name: Bug report
+description: File a report for a bug in Fluxon UI components or functionality.
+body:
+  - type: input
+    id: fluxon-version
+    attributes:
+      label: Fluxon UI Version
+      description: What version of Fluxon UI are you running? You can find this in your mix.exs file under dependencies.
+      placeholder: e.g., 1.0.5
+    validations:
+      required: true
+
+  - type: input
+    id: liveview-version
+    attributes:
+      label: Phoenix LiveView Version
+      description: What version of Phoenix LiveView are you running? Check your mix.exs dependencies.
+      placeholder: e.g., 1.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Current Behavior
+      description: What is happening? Please provide a clear description of the issue, including any error messages. Screenshots or videos are very helpful.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Reproduction Steps
+      description: Please provide the minimal code example needed to reproduce this issue. Include both the Fluxon component code and any relevant setup/configuration.
+      placeholder: |
+        ```heex
+        <.modal id="my-modal" />
+          Some content
+        </.modal>
+        ```
+
+        Steps to reproduce:
+        1. Add the above component
+        2. Click on X
+        3. Observe Y
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen? How should the component or functionality work correctly?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: What browser(s) are you seeing this issue on?
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      description: Please verify that you've completed these checks
+      options:
+        - label: I have searched for existing issues and confirmed this is not a duplicate
+        - label: I have tested this issue with the latest version of Fluxon UI
+        - label: I have included all the information needed to reproduce this issue
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to fill out this bug report!
+        This will help us improve Fluxon UI for everyone.
